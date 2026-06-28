@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8uiem0ceycor"]
+
+[ext_resource type="Texture2D" uid="uid://dbx66sovxd1" path="res://icon.svg" id="1_a3iky"]
+
+[node name="ChatListButton" type="Button"]
+focus_mode = 0
+text = "Chat 1"
+icon = ExtResource("1_a3iky")
+alignment = 0
+expand_icon = true

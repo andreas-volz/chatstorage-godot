@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqs31drccni1p"]
+
+[ext_resource type="Script" uid="uid://curwh4w10xf26" path="res://ChatMessage.gd" id="1_ko228"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4d13u"]
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 3
+
+[node name="ChatMessage" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ko228")
+
+[node name="AlignContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4d13u")
+
+[node name="MarginContainer" type="MarginContainer" parent="AlignContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ContentContainer" type="VBoxContainer" parent="AlignContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="UserName" type="Label" parent="AlignContainer/MarginContainer/ContentContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0.09229469, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "<user>"
+
+[node name="TimeUI" type="Label" parent="AlignContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.3099175, 0.3099175, 0.3099175, 1)
+theme_override_font_sizes/font_size = 8

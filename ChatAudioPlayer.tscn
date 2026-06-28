@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1vff6rgfoxo3"]
+
+[ext_resource type="Script" uid="uid://bjkl0ei5b0u0l" path="res://ChatAudioPlayer.gd" id="1_0ag3u"]
+[ext_resource type="Texture2D" uid="uid://dsepx8313idn0" path="res://Assets/Play.svg" id="1_ymw7i"]
+[ext_resource type="Texture2D" uid="uid://idwqqnplvlsw" path="res://Assets/Pause.svg" id="2_0ag3u"]
+
+[node name="ChatAudioPlayer" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0ag3u")
+
+[node name="PlayButton" type="TextureButton" parent="."]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("1_ymw7i")
+texture_pressed = ExtResource("2_0ag3u")
+stretch_mode = 3
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Spacer" type="Control" parent="."]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[connection signal="toggled" from="PlayButton" to="." method="_on_play_button_toggled"]

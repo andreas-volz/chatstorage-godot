@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://bheckjppk1g27"]
+
+[ext_resource type="Script" uid="uid://bdvv26fyllnul" path="res://ChatListUI.gd" id="1_bk4yf"]
+[ext_resource type="Texture2D" uid="uid://nhecee1y1nt6" path="res://Assets/chat_import.svg" id="2_yvrtg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvrtg"]
+bg_color = Color(0.24881959, 0.24881959, 0.24881959, 1)
+
+[node name="ChatListUI" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bk4yf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Sidebar" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yvrtg")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Sidebar"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Sidebar/MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+focus_mode = 0
+icon = ExtResource("2_yvrtg")
+expand_icon = true
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PanelContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Chat Storage User Interface"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/PanelContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ChatListContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/HSplitContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ChatContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/HSplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
